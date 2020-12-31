@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1047363806903",
+    "firebase_url": "https://mix-mart.firebaseio.com",
+    "project_id": "mix-mart",
+    "storage_bucket": "mix-mart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047363806903:android:0fe5e58035fb3958188f32",
+        "android_client_info": {
+          "package_name": "com.mixmart.mixmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047363806903-kt344qpbgacjvp6mejcg9qtvmtcb5mg7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxwyLsSJoDmX5GLOThYRtI6-3C88xNfuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047363806903-kt344qpbgacjvp6mejcg9qtvmtcb5mg7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

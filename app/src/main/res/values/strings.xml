@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">Mix Mart</string>
+    <string name="lgin">sign in</string>
+    <string name="sgnup">sign up</string>
+    <string name="logo">Mix Mart</string>
+    <string name="log">Sign in to your Account</string>
+    <string name="reg">Register your Account</string>
+    <string name="register">Register</string>
+    <string name="flName">Full Name</string>
+    <string name="pass">Password</string>
+    <string name="mail">E-mail</string>
+    <string name="cnfpass">Confirm Password</string>
+    <string name="logDes">Please log in using the\nregistered email and password</string>
+    <string name="moto">Get Your Groceries At Doorstep</string>
+    <string name="or">or</string>
+    <string name="forgot">Forgot Password?</string>
+    <string name="alAcc">Already have an Account ? Sign In</string>
+
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_my_cart">My cart</string>
+    <string name="action_notification">Notification</string>
+    <string name="action_search">Search</string>
+
+    <string name="menu_orders">My Orders</string>
+    <string name="menu_wishlist">My wishlist</string>
+    <string name="menu_account">My account</string>
+    <string name="menu_signout">Sign Out</string>
+    <string name="home_second">Home Second</string>
+    <string name="home">Mix Mart</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="daily_necessity">Daily Necessity</string>
+    <string name="mixmart_customer">MixMArt Customer</string>
+    <string name="side_nav_account">Account</string>
+
+    <string-array name="india_states">
+        <item>Andaman and Nicobar Islands</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chandigarh</item>
+        <item>Chhattisgarh</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Daman and Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Lakshadweep</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Orissa</item>
+        <item>Pondicherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttaranchal</item>
+        <item>Uttar Pradesh</item>
+        <item>West Bengal</item>
+    </string-array>
+
+</resources>
