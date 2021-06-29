@@ -108,43 +108,10 @@ public class HomeFragment extends Fragment {
         testingLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         homePageRecyclerView.setLayoutManager((testingLayoutManager));
 
-//////////////// category fake list
-        categoryModelFakeList.add(new CategoryModel("",""));
-        categoryModelFakeList.add(new CategoryModel("",""));
-        categoryModelFakeList.add(new CategoryModel("",""));
-        categoryModelFakeList.add(new CategoryModel("",""));
-        categoryModelFakeList.add(new CategoryModel("",""));
-        categoryModelFakeList.add(new CategoryModel("",""));
-        categoryModelFakeList.add(new CategoryModel("",""));
-////////////////////////
-        ////////////
-        /*
-        List<SliderModel> sliderModelFakeList = new ArrayList<>();
-        sliderModelFakeList.add(new SliderModel("null","#dfdfdf"));
-        sliderModelFakeList.add(new SliderModel("null","#dfdfdf"));
-        sliderModelFakeList.add(new SliderModel("null","#dfdfdf"));
-
-        List<HorizontalProductModel> horizontalProductFakeModelList = new ArrayList<>();
-        horizontalProductFakeModelList.add(new HorizontalProductModel("","","","",""));
-        horizontalProductFakeModelList.add(new HorizontalProductModel("","","","",""));
-        horizontalProductFakeModelList.add(new HorizontalProductModel("","","","",""));
-        horizontalProductFakeModelList.add(new HorizontalProductModel("","","","",""));
-        horizontalProductFakeModelList.add(new HorizontalProductModel("","","","",""));
-        horizontalProductFakeModelList.add(new HorizontalProductModel("","","","",""));
-        horizontalProductFakeModelList.add(new HorizontalProductModel("","","","",""));
-
-        homePageModelFakeList.add(new HomePageModel(0,sliderModelFakeList));
-        homePageModelFakeList.add(new HomePageModel(1,"","#dfdfdf",horizontalProductFakeModelList,new ArrayList<WishlistModel>()));
-        homePageModelFakeList.add(new HomePageModel(2,"","#dfdfdf",horizontalProductFakeModelList,new ArrayList<WishlistModel>()));
-        */
-        ///////////
-        ///////////
-
         categoryAdaptor = new CategoryAdaptor(categoryModelFakeList);
         adapter = new HomePageAdapter(homePageModelFakeList);
 
         swipeRefreshLayout = view.findViewById(R.id.refresh_layout);
-
 
        if( categoryModelList.size() == 0){
            loadCategories(categoryRecyclerView,getContext());

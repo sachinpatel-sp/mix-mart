@@ -130,7 +130,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                      productPrice.setText("₹"+documentSnapshot.get("product_price").toString()+"/-");
                      cuttedPrice.setText("₹"+documentSnapshot.get("cutted_price").toString()+"/-");
                      averageRating.setText(documentSnapshot.get("average_rating").toString());
-                     totalRatings.setText("("+(long)documentSnapshot.get("total_ratings")+" ratings)");
+                     totalRatings.setText(documentSnapshot.get("total_ratings").toString());
 
                      for(int x = 0;x <5;x++){
                          TextView rating = (TextView) ratingsNumberContainer.getChildAt(x);
@@ -355,7 +355,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                                                         rating.setText(String.valueOf(Integer.parseInt(rating.getText().toString()) + 1));
 
                                                         totalRatingMiniView.setText("(" + ((long) documentSnapshot.get("total_ratings") + 1) + " ratings)");
-                                                        totalRatings.setText("(" + ((long) documentSnapshot.get("total_ratings") + 1) + " ratings)");
+                                                        totalRatings.setText("" + ((long) documentSnapshot.get("total_ratings") + 1) );
 
                                                         averageRating.setText(calculateAverageRating(starPosition + 1, false));
                                                         averageRatingMiniView.setText(calculateAverageRating(starPosition + 1, false));
@@ -463,10 +463,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         }
         totalstars = totalstars + currentUserRating;
         if (update) {
-            return String.valueOf(totalstars / Long.parseLong(totalRatings.getText().toString())).substring(0,2);
+            return String.valueOf(totalstars / Long.parseLong(totalRatings.getText().toString())).substring(0,3);
 
         } else {
-            return String.valueOf(totalstars / Long.parseLong(totalRatings.getText().toString())).substring(0,2);
+            return String.valueOf(totalstars / Long.parseLong(totalRatings.getText().toString())).substring(0,3);
         }
     }
     @Override

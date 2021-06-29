@@ -115,11 +115,11 @@ public class AddAddressActivity extends AppCompatActivity {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()) {
+                                                    DBQueries.addressesModelArrayList.add(new AddressesModel(name.getText().toString() + "-" + phone.getText().toString(), fullAddress, pinCode.getText().toString(), true));
                                                     if (DBQueries.addressesModelArrayList.size() > 0) {
                                                         DBQueries.addressesModelArrayList.get(DBQueries.selectedAddress).setSelected(false);
                                                     }
                                                     if (getIntent().getStringExtra("INTENT").equals("deliveryIntent")) {
-                                                        DBQueries.addressesModelArrayList.add(new AddressesModel(name.getText().toString() + "-" + phone.getText().toString(), fullAddress, pinCode.getText().toString(), true));
                                                         Intent deliveryIntent = new Intent(AddAddressActivity.this, DeliveryActivity.class);
                                                         startActivity(deliveryIntent);
                                                     }else{

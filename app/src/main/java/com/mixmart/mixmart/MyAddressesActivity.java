@@ -47,7 +47,7 @@ public class MyAddressesActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Order Details");
+        getSupportActionBar().setTitle("Select Address");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         loadingDialog = new Dialog(this);
@@ -107,6 +107,7 @@ public class MyAddressesActivity extends AppCompatActivity {
         });
          addressesAdapter = new AddressesAdapter(DBQueries.addressesModelArrayList,MODE);
         myAddressesRecyclerView.setAdapter(addressesAdapter);
+
         ((SimpleItemAnimator)myAddressesRecyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
         addressesAdapter.notifyDataSetChanged();
         addNewAddress.setOnClickListener(new View.OnClickListener() {

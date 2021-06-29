@@ -68,7 +68,7 @@ public class AddressesAdapter extends RecyclerView.Adapter<AddressesAdapter.View
             fullName.setText(name);
             address.setText(UserAddress);
             pinCode.setText(userPinCode);
-
+            optionContainer.setVisibility(View.GONE);
             if(MODE == SELECT_ADDRESS){
                 icon.setImageResource(R.drawable.ic_check);
                 if(selected){
@@ -91,7 +91,7 @@ public class AddressesAdapter extends RecyclerView.Adapter<AddressesAdapter.View
                     }
                 });
             }else if(MODE == MANAGE_ADDRESS){
-                  optionContainer.setVisibility(View.GONE);
+
                   icon.setImageResource(R.drawable.ic_more_vertdp);
                   icon.setOnClickListener(new View.OnClickListener() {
                       @Override

@@ -30,7 +30,6 @@ public class MyWishlistFragment extends Fragment {
 
     public ShimmerFrameLayout shimmerFrameLayout;
     private RecyclerView wishlistRecyclerView;
-    private Dialog loadingDialog;
     public static WishlistAdapter wishlistAdapter;
 
     @Override
@@ -39,13 +38,6 @@ public class MyWishlistFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_wishlist, container, false);
 
-        /*loadingDialog = new Dialog(getContext());
-        loadingDialog.setContentView(R.layout.loading_progress);
-        loadingDialog.setCancelable(false);
-        loadingDialog.getWindow().setBackgroundDrawable(getContext().getDrawable(R.drawable.slider_background));
-        loadingDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        loadingDialog.show();
-       */
         shimmerFrameLayout = view.findViewById(R.id.shimmerLayout);
         wishlistRecyclerView = view.findViewById(R.id.my_wishlist_recycler_view);
         wishlistRecyclerView.setVisibility(View.GONE);
@@ -56,9 +48,6 @@ public class MyWishlistFragment extends Fragment {
         if(DBQueries.wishlistModelList.size()==0){
             DBQueries.wishlist.clear();
             DBQueries.loadWishlist(getContext(),true);
-            //shimmerFrameLayout.stopShimmerAnimation();
-            //shimmerFrameLayout.setVisibility(view.GONE);
-            //wishlistRecyclerView.setVisibility(view.VISIBLE);
         }
 
         wishlistAdapter = new WishlistAdapter(DBQueries.wishlistModelList,true);

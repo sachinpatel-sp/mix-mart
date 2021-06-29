@@ -11,10 +11,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -36,12 +39,13 @@ implements NavigationView.OnNavigationItemSelectedListener{
     private static final int ACCOUNT_FRAGMENT = 4;
     public static Boolean showCart = false;
     static FirebaseAuth firebaseAuth;
-    FirebaseUser firebaseUser;
+    private FirebaseUser firebaseUser;
+    static String userName,userEmail;
     FrameLayout frameLayout;
     private int currentFragment = -1;
     private NavigationView navigationView;
-    private TextView userName,usermail;
     private TextView badgeCount;
+    private TextView name,email;
     public static DrawerLayout drawer;
     private int scrollFlags;
     private AppBarLayout.LayoutParams params;
@@ -52,19 +56,32 @@ implements NavigationView.OnNavigationItemSelectedListener{
         Toolbar toolbar = findViewById(R.id.toolbar);
        // toolbar.setNavigationIcon(R.drawable.ic_back);
         setSupportActionBar(toolbar);
-        firebaseAuth = FirebaseAuth.getInstance();
-
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
+
         params = (AppBarLayout.LayoutParams) toolbar.getLayoutParams();
         scrollFlags = params.getScrollFlags();
+
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
+        name = navigationView.getHeaderView(0).findViewById(R.id.nav_name);
+        email = navigationView.getHeaderView(0).findViewById(R.id.nav_mail);
+
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(0).setChecked(true);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        userEmail = firebaseUser.getEmail();
+        DBQueries.firebaseFirestore.collection("users").document(firebaseAuth.getUid()).
+                get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                userName = task.getResult().get("fullname").toString();
+                name.setText(userName);
+            }
+        });
+        email.setText(userEmail);
         frameLayout = findViewById(R.id.home_frame_layout);
         if (showCart) {
             mainActivity = HomeActivity.this;

@@ -4,7 +4,6 @@ import java.util.List;
 
 public class HomePageModel {
 
-    ;
     public static final int BANNER_SLIDER = 0;
     public static final int HORIZONTAL_PRODUCT_VIEW = 1;
     public static final int GRID_PRODUCT_VIEW = 2;
